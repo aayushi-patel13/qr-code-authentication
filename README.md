@@ -1,5 +1,4 @@
 # qr-code-authentication
-# QR Code Authentication Using Machine Learning and Deep Learning
 
 ## Project Overview
 
