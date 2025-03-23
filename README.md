@@ -61,6 +61,7 @@ We used the following metrics for performance comparison:
 - F1-score
 - Confusion Matrix
 - ROC-AUC Score
+- Misclassifications Analysis
 
 **CNN Model Confusion Matrix**:
 
@@ -88,11 +89,13 @@ pip install -r requirements.txt
 
 ### 2. Run Models
 
-- Traditional model: `python svm_pca_model.py`
-- Deep learning model: `python cnn_model.py`
+- Traditional model:
+  code: `python svm_pca_model.py`
+  notebook:  `svm_pca_model.ipynb`
+- Deep learning model:
+  code: `python cnn_model.py`
+  notebook: `cnn_model.ipynb`
 - EDA notebook: open `eda_analysis.ipynb`
-
-Ensure you place your dataset in the `dataset/` folder:
 
 ```
 dataset/
