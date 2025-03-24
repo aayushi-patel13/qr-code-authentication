@@ -75,7 +75,7 @@ for class_name in class_names:
     for img in test_images:
         shutil.copy(os.path.join(class_path, img), os.path.join(test_dir, class_name, img))
 
-print("✅ Dataset split completed!")
+print("Dataset split completed!")
 
 # === STEP 2: Data Preparation ===
 
@@ -125,7 +125,7 @@ test_data = test_datagen.flow_from_directory(
 )
 
 # Optional: Check class distribution
-print("\n✅ Class distribution in training data:")
+print("\nClass distribution in training data:")
 print(train_data.class_indices)
 print("Samples per class:", train_data.classes.sum(), np.bincount(train_data.classes))
 
@@ -174,7 +174,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-print("\n🔁 Starting fine-tuning...")
+print("\n Starting fine-tuning...")
 history_fine = model.fit(
     train_data,
     validation_data=val_data,
@@ -185,7 +185,7 @@ history_fine = model.fit(
 # === STEP 7: Evaluate on Test Set ===
 
 test_loss, test_acc = model.evaluate(test_data)
-print(f"\n✅ Final Test Accuracy: {test_acc:.4f}")
+print(f"\n Final Test Accuracy: {test_acc:.4f}")
 
 # === STEP 8: Confusion Matrix and Classification Report ===
 
@@ -282,7 +282,7 @@ pred_labels = (pred_probs > 0.5).astype("int32").flatten()
 
 # === Classification Report ===
 
-print("📊 Classification Report:\n")
+print(" Classification Report:\n")
 print(classification_report(true_labels, pred_labels, target_names=test_data.class_indices.keys()))
 
 # === Confusion Matrix ===
