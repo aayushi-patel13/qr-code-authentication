@@ -6,14 +6,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import matplotlib.pyplot as plt
+from tensorflow.keras.preprocessing.image import img_to_array, load_img
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 # Machine learning
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
-
+import seaborn as sns
+import itertools
 # Deep Learning
 import torch
 import torch.nn as nn
@@ -198,13 +201,6 @@ print(confusion_matrix(y_true, y_pred_labels))
 print("\n📊 Classification Report:")
 print(classification_report(y_true, y_pred_labels, target_names=test_data.class_indices.keys()))
 
-
-import matplotlib.pyplot as plt
-import cv2
-import numpy as np
-from tensorflow.keras.preprocessing.image import img_to_array, load_img
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-
 # Helper: Load and preprocess an image
 def preprocess_image(img_path, target_size=(224, 224)):
     img = load_img(img_path, target_size=target_size)
@@ -263,13 +259,6 @@ for i, path in enumerate(test_image_paths):
 plt.tight_layout()
 plt.show()
 
-
-from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import os
-import itertools
 
 # === Get True Labels and Predictions ===
 
